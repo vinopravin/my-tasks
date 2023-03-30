@@ -1,0 +1,12 @@
+<ng-content></ng-content>
+<input *ngIf="tasks.length" placeholder="search tasks .." type="text" class="form-control" name="taskSearch" id="taskSearch" [(ngModel)]="searchText"> 
+<ul>
+    <li class="d-flex my-3 py-2 px-3 task_list" [ngClass]="task.is_completed ? 'completed_tasks': ''" *ngFor="let task of tasks | filterPipe: searchText ;let i = index" >
+        <input type="checkbox" name="complete_task" [checked]="task.is_completed" (change)="markAsCompleted(task._id, task.is_completed)">
+        <div class="task_name" (click)="task.isOpened = !task.isOpened">{{ task.name }}</div>
+        <button class="btn btn-outline-danger" (click)="removeTask(task._id)">Delete</button>
+        <div class="task_description" *ngIf="task.isOpened">
+            {{ task.description }}
+        </div>
+    </li>
+</ul>

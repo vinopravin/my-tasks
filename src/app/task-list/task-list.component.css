@@ -1,0 +1,23 @@
+ul{
+    padding: 0;
+}
+.task_list {
+    flex-wrap: wrap;
+}
+.task_name {
+    width: 65%;
+    padding-left: 12px;
+}
+.task_description {
+    width: 80%;
+    border-radius: 15px;
+    padding: 5px 15px;
+    font-size: 14px;
+    font-style: italic;
+}
+.completed_tasks {
+    filter: opacity(0.5);
+}
+.completed_tasks > .task_name {
+    text-decoration: line-through;
+}

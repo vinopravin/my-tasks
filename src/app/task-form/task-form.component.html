@@ -1,0 +1,5 @@
+<form action="">
+    <input class="form-control my-1" type="text" name="newTask" id="newTask" [(ngModel)]="newTask.name" placeholder="Create New Task ..">
+    <textarea class="form-control my-1" name="newTaskDesc" id="newTaskDesc" cols="30" rows="2"  placeholder="More about the task.." [(ngModel)]="newTask.description"></textarea>
+    <button class="btn btn-outline-primary my-3" type="submit" (click)="addTodo()">Add Task</button>
+</form>
